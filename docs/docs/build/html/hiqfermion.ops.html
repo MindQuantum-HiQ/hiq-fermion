@@ -1,0 +1,848 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hiqfermion.ops package &mdash; HiQFermion 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> HiQFermion
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">hiqfermion.ops package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops.fermion_operator">hiqfermion.ops.fermion_operator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops.interaction_operator">hiqfermion.ops.interaction_operator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops.interaction_rdm">hiqfermion.ops.interaction_rdm module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops.polynomial_tensor">hiqfermion.ops.polynomial_tensor module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops.qubit_operator">hiqfermion.ops.qubit_operator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops.time_evolution">hiqfermion.ops.time_evolution module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.ops">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HiQFermion</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>hiqfermion.ops package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hiqfermion.ops.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hiqfermion-ops-package">
+<h1>hiqfermion.ops package<a class="headerlink" href="#hiqfermion-ops-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hiqfermion.ops.fermion_operator">
+<span id="hiqfermion-ops-fermion-operator-module"></span><h2>hiqfermion.ops.fermion_operator module<a class="headerlink" href="#module-hiqfermion.ops.fermion_operator" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator">
+<em class="property">class </em><code class="descclassname">hiqfermion.ops.fermion_operator.</code><code class="descname">FermionOperator</code><span class="sig-paren">(</span><em>term=None</em>, <em>coefficient=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="classmethod">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.accumulate">
+<em class="property">classmethod </em><code class="descname">accumulate</code><span class="sig-paren">(</span><em>operators</em>, <em>start=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.accumulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum over all the operators</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.compress">
+<code class="descname">compress</code><span class="sig-paren">(</span><em>abs_tol=1e-08</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.compress" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Eliminate the very small terms that close to zero.Removes small imaginary</dt>
+<dd>and real parts.</dd>
+<dt>Args:</dt>
+<dd>abs_tol(float): Absolute tolerance,must be at least 0.0</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.constant">
+<code class="descname">constant</code><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value of the constant term.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.count_terms">
+<code class="descname">count_terms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.count_terms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.get_most_significant_terms">
+<code class="descname">get_most_significant_terms</code><span class="sig-paren">(</span><em>num=1</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.get_most_significant_terms" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return a list of operators with a few terms that has most significant effect.</dt>
+<dd>Here the self.terms has been ordered according to the</dd>
+<dt>Args:</dt>
+<dd>num(int): How many significant term operators that to extract</dd>
+<dt>Returns:</dt>
+<dd>operator([self.__class__]): A list of operators is summing up.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.get_operator_groups">
+<code class="descname">get_operator_groups</code><span class="sig-paren">(</span><em>num_group</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.get_operator_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of operators with a few terms
+Args:</p>
+<blockquote>
+<div>num_group(int): How many operators that to get</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>operator([self.__class__]): A list of operators is summing up.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.get_operators">
+<code class="descname">get_operators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.get_operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of operators with a single term
+Returns:</p>
+<blockquote>
+<div>operators(self.__class__):  A generator of the operators</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.get_ordered_operators">
+<code class="descname">get_ordered_operators</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.get_ordered_operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the operators with order. Default the abs value largest on the left.
+Args:</p>
+<blockquote>
+<div>reverse(boolean): default to false.</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>operator([self.__class__]): A sum of of all operators with most
+significant term in the left.</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.identity">
+<em class="property">classmethod </em><code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+multiplicative_identity (QubitOperator):</p>
+<blockquote>
+<div>A QubitOperator id with the property that id * x = x * id = x for
+all operators x of the same class.</div></blockquote>
+<dl class="docutils">
+<dt>Note:</dt>
+<dd>This identity operator are quite useful to calculate the power of the same tpye operator</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.is_two_body_number_conserving">
+<code class="descname">is_two_body_number_conserving</code><span class="sig-paren">(</span><em>check_spin_symmetry=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.is_two_body_number_conserving" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether has the correct form to make a molecular
+Requires every sub term is particle number conserving, that is 
+the number of raising and lowering operators are equal.Also need to
+check the parity(spin) conservation(Z2 symmetry).
+Note the molecular term should compose of constant term, h_pq adagger_p*a_q,
+h_pqrs adagger_p*dagger_q*a_r*a_s,</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>check_spin_symmetry(bool): whether to check spin conservation.</dd>
+<dt>Returns:</dt>
+<dd>return  True if  it is two_body_number_conserving.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.normal_ordered">
+<code class="descname">normal_ordered</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.normal_ordered" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.parse_long_string">
+<code class="descname">parse_long_string</code><span class="sig-paren">(</span><em>long_string</em>, <em>coefficient=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.parse_long_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse a long string representation.</p>
+<dl class="docutils">
+<dt>e.g. For FermionOperator:</dt>
+<dd>‘1.5j [2^ 1] + 1.4 [4^ 0]’</dd>
+<dt>e.g. For QubitOperator:</dt>
+<dd>‘1.5j [X1 Y2] + 1.4 [Z1 Y2]’</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.parse_sequence">
+<code class="descname">parse_sequence</code><span class="sig-paren">(</span><em>terms</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.parse_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a term given as a sequency type (i.e. list, tuple, etc.).</p>
+<dl class="docutils">
+<dt>e.g. For QubitOperator:</dt>
+<dd><blockquote class="first">
+<div>[(2, ‘X’), (0, ‘Y’), (3,’Z’)] -&gt; ((0, ‘Y’),(2, ‘X’), (3,’Z’))</div></blockquote>
+<p class="last">Note for the single term case [1,’X’]-&gt;((1,’X’),)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.parse_string">
+<code class="descname">parse_string</code><span class="sig-paren">(</span><em>terms_string</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.parse_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a term given as a string type</p>
+<dl class="docutils">
+<dt>e.g. For QubitOperator:</dt>
+<dd>‘X2 Y0 Z3’ -&gt; ((0, ‘Y’),(2, ‘X’), (3,’Z’))</dd>
+<dt>Returns:</dt>
+<dd>return A tuple list, such as ((0, ‘Y’),(2, ‘X’), (3,’Z’))</dd>
+<dt>Raises:</dt>
+<dd>‘XX2’ or ‘1.5 X2’ is not the proper format and could raise TypeError.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.parse_term">
+<code class="descname">parse_term</code><span class="sig-paren">(</span><em>term</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.parse_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the term whether it is string type or sequence type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.simplify">
+<code class="descname">simplify</code><span class="sig-paren">(</span><em>terms</em>, <em>coefficient=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplify a term.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.size">
+<code class="descname">size</code><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the size of the hamiltonian terms</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.validate_term">
+<code class="descname">validate_term</code><span class="sig-paren">(</span><em>term</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.validate_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the tuple term e.g.(2, ‘X’) is valid.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hiqfermion.ops.fermion_operator.FermionOperator.zero">
+<em class="property">classmethod </em><code class="descname">zero</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.FermionOperator.zero" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>additive_identity (QubitOperator):</dt>
+<dd>A qubit type operator o with the property that o + x = x + o = x for
+all operators x from the same class.</dd>
+</dl>
+</dd>
+<dt>Note:</dt>
+<dd>This zero operator is quite useful to deal with sum of partial operators into a complicated one</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="hiqfermion.ops.fermion_operator.normal_ordered">
+<code class="descclassname">hiqfermion.ops.fermion_operator.</code><code class="descname">normal_ordered</code><span class="sig-paren">(</span><em>fermion_operator</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.normal_ordered" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate and return the normal order of the FermionOperator.
+By convention, normal ordering implies terms are ordered
+from highest mode index (on left) to lowest (on right).
+Also, creation operators come first then follows the annihilation operator.
+e.g 3 4^ -&gt; - 4^ 3</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="hiqfermion.ops.fermion_operator.normal_ordered_term">
+<code class="descclassname">hiqfermion.ops.fermion_operator.</code><code class="descname">normal_ordered_term</code><span class="sig-paren">(</span><em>term</em>, <em>coefficient</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.fermion_operator.normal_ordered_term" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.ops.interaction_operator">
+<span id="hiqfermion-ops-interaction-operator-module"></span><h2>hiqfermion.ops.interaction_operator module<a class="headerlink" href="#module-hiqfermion.ops.interaction_operator" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hiqfermion.ops.interaction_operator.InteractionOperator">
+<em class="property">class </em><code class="descclassname">hiqfermion.ops.interaction_operator.</code><code class="descname">InteractionOperator</code><span class="sig-paren">(</span><em>constant</em>, <em>one_body_tensor</em>, <em>two_body_tensor</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.interaction_operator.InteractionOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor" title="hiqfermion.ops.polynomial_tensor.PolynomialTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">hiqfermion.ops.polynomial_tensor.PolynomialTensor</span></code></a></p>
+<p>Class to store ‘interaction opeartors’ which are used to configure a ferinonic molecular Hamiltonian.
+The Hamiltonian including one-body and two-body terms which conserve spin and parity. In this module,
+The stored coefficient could be represented the molecualr Hamiltonians througth the FermionOperator class.
+Note that the operators stored in this
+class has the form: constant + sum_{p, q} h_[p, q] a^dagger_p a_q +</p>
+<blockquote>
+<div>sum_{p, q, r, s} h_[p, q, r, s] a^dagger_p a^dagger_q a_r a_s.</div></blockquote>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd><dl class="first last docutils">
+<dt>constant: A constant term in the operator given as a</dt>
+<dd>float. For instance, the nuclear repulsion energy.</dd>
+<dt>one_body_tensor: The coefficients of the one-body terms (h[p, q]).</dt>
+<dd>This is an n_qubits x n_qubits numpy array of floats. By default we store the numpy array 
+with keys: a^dagger_p a_q (1,0).</dd>
+<dt>two_body_tensor: The coefficients of the two-body terms</dt>
+<dd>(h[p, q, r, s]). This is an n_qubits x n_qubits x n_qubits x
+n_qubits numpy array of floats.By default we store the numpy array 
+with keys: a^dagger_p a^dagger_q a_r a_s (1, 1, 0, 0).</dd>
+</dl>
+</dd>
+</dl>
+<dl class="method">
+<dt id="hiqfermion.ops.interaction_operator.InteractionOperator.unique_iter">
+<code class="descname">unique_iter</code><span class="sig-paren">(</span><em>complex_valued=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.interaction_operator.InteractionOperator.unique_iter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate all terms that are not in the same symmetry group.
+Four point symmetry:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>pq = qp.</li>
+<li>pqrs = srqp = qpsr = rspq.</li>
+</ol>
+</div></blockquote>
+<dl class="docutils">
+<dt>Eight point symmetry(when complex_valued is False):</dt>
+<dd><ol class="first last arabic simple">
+<li>pq = qp.</li>
+<li>pqrs = rqps = psrq = srqp = qpsr = rspq = spqr = qrsp.</li>
+</ol>
+</dd>
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>complex_valued (bool):</dt>
+<dd>Whether the operator has complex coefficients.</dd>
+</dl>
+</dd>
+<dt>Yields:</dt>
+<dd>tuple[int]</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="hiqfermion.ops.interaction_operator.InteractionOperatorError">
+<em class="property">exception </em><code class="descclassname">hiqfermion.ops.interaction_operator.</code><code class="descname">InteractionOperatorError</code><a class="headerlink" href="#hiqfermion.ops.interaction_operator.InteractionOperatorError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.ops.interaction_rdm">
+<span id="hiqfermion-ops-interaction-rdm-module"></span><h2>hiqfermion.ops.interaction_rdm module<a class="headerlink" href="#module-hiqfermion.ops.interaction_rdm" title="Permalink to this headline">¶</a></h2>
+<p>This is the class to store the reduced density matrix that 
+used to calculate the expectation value of Hamiltonian</p>
+<dl class="class">
+<dt id="hiqfermion.ops.interaction_rdm.InteractionRDM">
+<em class="property">class </em><code class="descclassname">hiqfermion.ops.interaction_rdm.</code><code class="descname">InteractionRDM</code><span class="sig-paren">(</span><em>one_body_tensor</em>, <em>two_body_tensor</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.interaction_rdm.InteractionRDM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor" title="hiqfermion.ops.polynomial_tensor.PolynomialTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">hiqfermion.ops.polynomial_tensor.PolynomialTensor</span></code></a></p>
+<p>class that stores the one-body and two-body reduced density matrix.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>one_body_tensor: the expectation value &lt;a^dagger_p a_q&gt; of one-body term
+two_body_tensor: the expectation value &lt;a^dagger_p a^dagger_q a_r a_s&gt; of two-body term</dd>
+</dl>
+<dl class="method">
+<dt id="hiqfermion.ops.interaction_rdm.InteractionRDM.expectation">
+<code class="descname">expectation</code><span class="sig-paren">(</span><em>operator</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.interaction_rdm.InteractionRDM.expectation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return expectation value of an InteractionRDM with an InteractionOperator.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>operator: A InteractionOperator.</dd>
+<dt>Returns:</dt>
+<dd>float: Expectation value</dd>
+<dt>Raises:</dt>
+<dd>InteractionRDMError: Invalid operator provided.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="hiqfermion.ops.interaction_rdm.InteractionRDMError">
+<em class="property">exception </em><code class="descclassname">hiqfermion.ops.interaction_rdm.</code><code class="descname">InteractionRDMError</code><a class="headerlink" href="#hiqfermion.ops.interaction_rdm.InteractionRDMError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.ops.polynomial_tensor">
+<span id="hiqfermion-ops-polynomial-tensor-module"></span><h2>hiqfermion.ops.polynomial_tensor module<a class="headerlink" href="#module-hiqfermion.ops.polynomial_tensor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hiqfermion.ops.polynomial_tensor.PolynomialTensor">
+<em class="property">class </em><code class="descclassname">hiqfermion.ops.polynomial_tensor.</code><code class="descname">PolynomialTensor</code><span class="sig-paren">(</span><em>n_body_tensors=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to store the coefficient of the fermionic ladder opeators in a tensor form
+For instance, in a molecular Hamiltonian (degree 4 polynomial) which
+conserves particle number, there are only three kinds of terms, namely
+constant term, single excitation a^dagger_p a_q and double excitation terms a^dagger_p a^dagger_q a_r a_s, 
+and their corresponding coefficients can be stored in an
+scalar, n_qubits x n_qubits matrix and n_qubits x n_qubits x n_qubits x n_qubits matrix.
+Note that each tensor must have an even number of dimensions due to the parity conservation.
+Much of the functionality of this class is similar to that of FermionOperator</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">n_qubits(int): The number of the sites that tensor operator acts.
+n_body_tensors(dict): A dictionary storing the tensors describing</p>
+<blockquote class="last">
+<div>n-body interactions. The keys are tuples that indicate the
+type of tensor. 
+For instance, n_body_tensors[()] would return a constant, while a n_body_tensors[(1, 0)] would
+be an (n_qubits x n_qubits) numpy array, and n_body_tensors[(1,1,0,1)] 
+would return a (n_qubits x n_qubits  x n_qubits x n_qubits) numpy array
+and those constant and array represent the coefficients of terms of the form
+identity, a^dagger_p a_q, a^dagger_p a^dagger_1 a_r a_s, respectively.
+Note here ‘1’ represent a^dagger, while ‘0’ represent a.</div></blockquote>
+</dd>
+</dl>
+<dl class="attribute">
+<dt id="hiqfermion.ops.polynomial_tensor.PolynomialTensor.constant">
+<code class="descname">constant</code><a class="headerlink" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the value of the identity term</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hiqfermion.ops.polynomial_tensor.PolynomialTensor.one_body_tensor">
+<code class="descname">one_body_tensor</code><a class="headerlink" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor.one_body_tensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the one-body term</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.polynomial_tensor.PolynomialTensor.rotate_basis">
+<code class="descname">rotate_basis</code><span class="sig-paren">(</span><em>u</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor.rotate_basis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="hiqfermion.ops.polynomial_tensor.PolynomialTensor.two_body_tensor">
+<code class="descname">two_body_tensor</code><a class="headerlink" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensor.two_body_tensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the two body term</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="hiqfermion.ops.polynomial_tensor.PolynomialTensorError">
+<em class="property">exception </em><code class="descclassname">hiqfermion.ops.polynomial_tensor.</code><code class="descname">PolynomialTensorError</code><a class="headerlink" href="#hiqfermion.ops.polynomial_tensor.PolynomialTensorError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.ops.qubit_operator">
+<span id="hiqfermion-ops-qubit-operator-module"></span><h2>hiqfermion.ops.qubit_operator module<a class="headerlink" href="#module-hiqfermion.ops.qubit_operator" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator">
+<em class="property">class </em><code class="descclassname">hiqfermion.ops.qubit_operator.</code><code class="descname">QubitOperator</code><span class="sig-paren">(</span><em>term=None</em>, <em>coefficient=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A sum of terms acting on qubits, e.g., 0.5 * ‘X1 X5’ + 0.3 * ‘Z1 Z2’.
+A term is an operator acting on n qubits and can be represented as:
+coefficient * local_operator[0] x … x local_operator[n-1]
+where x is the tensor product. A local operator is a Pauli operator
+(‘I’, ‘X’, ‘Y’, or ‘Z’) which acts on one qubit. In math notation a term
+is, for example, 0.5 * ‘X1 X5’, which means that a Pauli X operator acts
+on qubit 1 and 5, while the identity operator acts on all the rest qubits.</p>
+<p>Note for a QubitOperator to be a Hamiltonian which is a hermitian
+operator, the coefficients of all terms must be real.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hamiltonian</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">QubitOperator</span><span class="p">(</span><span class="s1">&#39;X0 X5&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">QubitOperator</span><span class="p">(</span><span class="s1">&#39;Z0&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>QubitOperator has the following attributes set as follows::</dt>
+<dd>operators = (‘X’, ‘Y’, ‘Z’)
+different_indices_commute = True</dd>
+<dt>Example:</dt>
+<dd><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ham</span> <span class="o">=</span> <span class="p">((</span><span class="n">QubitOperator</span><span class="p">(</span><span class="s1">&#39;X0 Y3&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="o">+</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">QubitOperator</span><span class="p">(</span><span class="s1">&#39;X0 Y3&#39;</span><span class="p">)))</span>
+<span class="c1"># Equivalently</span>
+<span class="n">ham2</span> <span class="o">=</span> <span class="n">QubitOperator</span><span class="p">(</span><span class="s1">&#39;X0 Y3&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ham2</span> <span class="o">+=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">QubitOperator</span><span class="p">(</span><span class="s1">&#39;X0 Y3&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="classmethod">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.accumulate">
+<em class="property">classmethod </em><code class="descname">accumulate</code><span class="sig-paren">(</span><em>operators</em>, <em>start=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.accumulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sum over all the operators</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.compress">
+<code class="descname">compress</code><span class="sig-paren">(</span><em>abs_tol=1e-08</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.compress" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Eliminate the very small terms that close to zero.Removes small imaginary</dt>
+<dd>and real parts.</dd>
+<dt>Args:</dt>
+<dd>abs_tol(float): Absolute tolerance, must be at least 0.0</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.constant">
+<code class="descname">constant</code><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the value of the constant term.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.count_gates">
+<code class="descname">count_gates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.count_gates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.count_terms">
+<code class="descname">count_terms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.count_terms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.get_most_significant_terms">
+<code class="descname">get_most_significant_terms</code><span class="sig-paren">(</span><em>num=1</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.get_most_significant_terms" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Return a list of operators with a few terms that has most significant effect.</dt>
+<dd>Here the self.terms has been ordered according to the</dd>
+<dt>Args:</dt>
+<dd>num(int): How many significant term operators that to extract</dd>
+<dt>Returns:</dt>
+<dd>operator([self.__class__]): A list of operators is summing up.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.get_operator_groups">
+<code class="descname">get_operator_groups</code><span class="sig-paren">(</span><em>num_group</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.get_operator_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of operators with a few terms
+Args:</p>
+<blockquote>
+<div>num_group(int): How many operators that to get</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>operator([self.__class__]): A list of operators is summing up.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.get_operators">
+<code class="descname">get_operators</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.get_operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a list of operators with a single term
+Returns:</p>
+<blockquote>
+<div>operators(self.__class__):  A generator of the operators</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.get_ordered_operators">
+<code class="descname">get_ordered_operators</code><span class="sig-paren">(</span><em>reverse=False</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.get_ordered_operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the operators with order. Default the abs value largest on the left.
+Args:</p>
+<blockquote>
+<div>reverse(boolean): default to false.</div></blockquote>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>operator([self.__class__]): A sum of of all operators with most
+significant term in the left.</dd>
+</dl>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.identity">
+<em class="property">classmethod </em><code class="descname">identity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.identity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:
+multiplicative_identity (QubitOperator):</p>
+<blockquote>
+<div>A QubitOperator id with the property that id * x = x * id = x for
+all operators x of the same class.</div></blockquote>
+<dl class="docutils">
+<dt>Note:</dt>
+<dd>This identity operator are quite useful to calculate the power of the same tpye operator</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.next">
+<code class="descname">next</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.next" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.parse_long_string">
+<code class="descname">parse_long_string</code><span class="sig-paren">(</span><em>long_string</em>, <em>coefficient=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.parse_long_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse a long string representation.</p>
+<dl class="docutils">
+<dt>e.g. For FermionOperator:</dt>
+<dd>‘1.5j [2^ 1] + 1.4 [4^ 0]’</dd>
+<dt>e.g. For QubitOperator:</dt>
+<dd>‘1.5j [X1 Y2] + 1.4 [Z1 Y2]’</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.parse_sequence">
+<code class="descname">parse_sequence</code><span class="sig-paren">(</span><em>terms</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.parse_sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a term given as a sequency type (i.e. list, tuple, etc.).</p>
+<dl class="docutils">
+<dt>e.g. For QubitOperator:</dt>
+<dd><blockquote class="first">
+<div>[(2, ‘X’), (0, ‘Y’), (3,’Z’)] -&gt; ((0, ‘Y’),(2, ‘X’), (3,’Z’))</div></blockquote>
+<p class="last">Note for the single term case [1,’X’]-&gt;((1,’X’),)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.parse_string">
+<code class="descname">parse_string</code><span class="sig-paren">(</span><em>terms_string</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.parse_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse a term given as a string type</p>
+<dl class="docutils">
+<dt>e.g. For QubitOperator:</dt>
+<dd>‘X2 Y0 Z3’ -&gt; ((0, ‘Y’),(2, ‘X’), (3,’Z’))</dd>
+<dt>Returns:</dt>
+<dd>return A tuple list, such as ((0, ‘Y’),(2, ‘X’), (3,’Z’))</dd>
+<dt>Raises:</dt>
+<dd>‘XX2’ or ‘1.5 X2’ is not the proper format and could raise TypeError.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.parse_term">
+<code class="descname">parse_term</code><span class="sig-paren">(</span><em>term</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.parse_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse the term whether it is string type or sequence type</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.simplify">
+<code class="descname">simplify</code><span class="sig-paren">(</span><em>terms</em>, <em>coefficient=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.simplify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simplify the list by using the commuation and anti-commutation relationship.
+Args:</p>
+<blockquote>
+<div>The input terms_lst could be a sorted list or unsorted list
+e.g. [(3, ‘Z’),(2, ‘X’), (3,’Z’)] -&gt; [(2,’X’)]
+Also, it could accept input with tuples ((3, ‘Z’),(2, ‘X’), (3,’Z’)) -&gt;[(2,’X’)]</div></blockquote>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.size">
+<code class="descname">size</code><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the size of the hamiltonian terms</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.validate_term">
+<code class="descname">validate_term</code><span class="sig-paren">(</span><em>term</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.validate_term" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether the tuple term e.g.(2, ‘X’) is valid.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="hiqfermion.ops.qubit_operator.QubitOperator.zero">
+<em class="property">classmethod </em><code class="descname">zero</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.qubit_operator.QubitOperator.zero" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Returns:</dt>
+<dd><dl class="first last docutils">
+<dt>additive_identity (QubitOperator):</dt>
+<dd>A qubit type operator o with the property that o + x = x + o = x for
+all operators x from the same class.</dd>
+</dl>
+</dd>
+<dt>Note:</dt>
+<dd>This zero operator is quite useful to deal with sum of partial operators into a complicated one</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.ops.time_evolution">
+<span id="hiqfermion-ops-time-evolution-module"></span><h2>hiqfermion.ops.time_evolution module<a class="headerlink" href="#module-hiqfermion.ops.time_evolution" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="hiqfermion.ops.time_evolution.TimeEvolution">
+<code class="descclassname">hiqfermion.ops.time_evolution.</code><code class="descname">TimeEvolution</code><span class="sig-paren">(</span><em>time</em>, <em>hamiltonian</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.ops.time_evolution.TimeEvolution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the Hamiltonian to an instance of the ProjectQ QubitOperator
+and then returns an instance of the ProjectQ TimeEvolution gate.
+This gate is the unitary time evolution propagator:
+exp(-i * H * t),
+where H is the Hamiltonian of the system and t is the time. Note that -i
+factor is stored implicitly.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>wavefunction = eng.allocate_qureg(5)
+hamiltonian = 0.5 * QubitOperator(“X0 Z1”)
+# Apply exp(-i * H * t) to the wavefunction:
+TimeEvolution(time=1.0, hamiltonian=hamiltonian) | wavefunction</dd>
+<dt>Args:</dt>
+<dd>time(float, int): time t
+hamiltonian(QubitOperator): hamiltonaian H</dd>
+<dt>Returns:</dt>
+<dd>Instance of ProjectQ TimeEvolution gate.</dd>
+<dt>Raises:</dt>
+<dd><dl class="first last docutils">
+<dt>TypeError: If time is not a numeric type and hamiltonian is not a</dt>
+<dd>QubitOperator.</dd>
+</dl>
+</dd>
+<dt>Note:</dt>
+<dd>The time duration for the evolution is default to be 1.0</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.ops">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hiqfermion.ops" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, DCT-Quantum
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

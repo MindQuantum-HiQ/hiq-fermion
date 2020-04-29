@@ -1,0 +1,19 @@
+*.tex text eol=lf
+*.bbl text eol=lf
+*.bib text eol=lf
+README text eol=lf
+.git* text eol=lf
+*.md text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.ipynb text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+*.pdf binary
+*.png binary
