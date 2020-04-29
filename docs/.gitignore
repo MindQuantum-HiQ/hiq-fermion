@@ -5,7 +5,7 @@ __pycache__/
 
 record*
 *.egg-info
-#build
+build
 dist
 
 
