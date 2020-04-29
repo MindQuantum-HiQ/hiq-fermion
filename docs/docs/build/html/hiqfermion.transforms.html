@@ -1,0 +1,252 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hiqfermion.transforms package &mdash; HiQFermion 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> HiQFermion
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">hiqfermion.transforms package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.transforms.transform">hiqfermion.transforms.transform module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.transforms">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HiQFermion</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>hiqfermion.transforms package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hiqfermion.transforms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hiqfermion-transforms-package">
+<h1>hiqfermion.transforms package<a class="headerlink" href="#hiqfermion-transforms-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hiqfermion.transforms.transform">
+<span id="hiqfermion-transforms-transform-module"></span><h2>hiqfermion.transforms.transform module<a class="headerlink" href="#module-hiqfermion.transforms.transform" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="hiqfermion.transforms.transform.Transform">
+<em class="property">class </em><code class="descclassname">hiqfermion.transforms.transform.</code><code class="descname">Transform</code><span class="sig-paren">(</span><em>operator</em>, <em>n_qubits=None</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.transforms.transform.Transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for transforms of fermionic and qubit operators. 
+Methods jordan_wigner, parity, bravyi_kitaev, bravyi_kitaev_tree 
+make transform of fermionic operators to qubit ones,
+they are initialized by FermionOperator, return QubitOperator.
+Method reversed_jordan_wigner makes transform of qubit operator
+to fermionic one, it is initialized by QubitOperator, returnes FermionOperator.</p>
+<dl class="method">
+<dt id="hiqfermion.transforms.transform.Transform.bravyi_kitaev">
+<code class="descname">bravyi_kitaev</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.transforms.transform.Transform.bravyi_kitaev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply Bravyi-Kitaev transform. 
+Implementation from arXiv:quant-ph/0003137 and
+“A New Data Structure for Cumulative Frequency Tables” by Peter M. Fenwick.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.transforms.transform.Transform.bravyi_kitaev_tree">
+<code class="descname">bravyi_kitaev_tree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.transforms.transform.Transform.bravyi_kitaev_tree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply Bravyi-Kitaev transform based on Fenwick trees. 
+Implementation from arxiv:1701.07072.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.transforms.transform.Transform.jordan_wigner">
+<code class="descname">jordan_wigner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.transforms.transform.Transform.jordan_wigner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply Jordan-Wigner transform.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.transforms.transform.Transform.parity">
+<code class="descname">parity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.transforms.transform.Transform.parity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply parity transform.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.transforms.transform.Transform.reversed_jordan_wigner">
+<code class="descname">reversed_jordan_wigner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.transforms.transform.Transform.reversed_jordan_wigner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply reversed Jordan-Wigner transform.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.transforms">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hiqfermion.transforms" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, DCT-Quantum
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,976 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>hiqfermion.drivers package &mdash; HiQFermion 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> HiQFermion
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">hiqfermion.drivers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.gaussian_calculator">hiqfermion.drivers.gaussian_calculator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.hamiltonian_simplification">hiqfermion.drivers.hamiltonian_simplification module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.nwchem_calculator">hiqfermion.drivers.nwchem_calculator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.nwchem_inputfile_generator">hiqfermion.drivers.nwchem_inputfile_generator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.psi4_calculator">hiqfermion.drivers.psi4_calculator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.psi4_inputfile_generator">hiqfermion.drivers.psi4_inputfile_generator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers.pyscf_calculator">hiqfermion.drivers.pyscf_calculator module</a></li>
+<li><a class="reference internal" href="#module-hiqfermion.drivers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">HiQFermion</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>hiqfermion.drivers package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hiqfermion.drivers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="hiqfermion-drivers-package">
+<h1>hiqfermion.drivers package<a class="headerlink" href="#hiqfermion-drivers-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-hiqfermion.drivers.gaussian_calculator">
+<span id="hiqfermion-drivers-gaussian-calculator-module"></span><h2>hiqfermion.drivers.gaussian_calculator module<a class="headerlink" href="#module-hiqfermion.drivers.gaussian_calculator" title="Permalink to this headline">¶</a></h2>
+<p>The module of calling Gaussian16 to do calculations based on the input MolecularData
+and update the MolecularData inplace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example import modules:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">GaussianCalculator</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">example single molecule:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;g16_sto-3g_1_0_h2&#39;</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="n">molecule</span><span class="o">.</span><span class="n">gaussian_keys</span><span class="o">=</span><span class="s1">&#39;scf(conventional)&#39;</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">gs_h2</span> <span class="o">=</span> <span class="n">GaussianCalculator</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
+<span class="n">gs_h2</span><span class="o">.</span><span class="n">excute</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator">
+<em class="property">class </em><code class="descclassname">hiqfermion.drivers.gaussian_calculator.</code><code class="descname">GaussianCalculator</code><span class="sig-paren">(</span><em>molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">hiqfermion.drivers._calculator.Calculator</span></code></p>
+<p>The class to do quantum chemistry calculations by Gaussian16.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">molecular_data:</th><td class="field-body">The hiqfermion molecular data type which includes geometry, 
+basis, multiplicity, charge and so on.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">By using <cite>GaussianCalculator.excute()</cite> the calculator will call g16 to do quantum chemistry calculation
+and update the corresponding input MolecularData object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.ao2mo_two">
+<code class="descname">ao2mo_two</code><span class="sig-paren">(</span><em>ints</em>, <em>mo_coeff</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.ao2mo_two" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.build">
+<code class="descname">build</code><span class="sig-paren">(</span><em>para</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate SCF job based on the parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><em>infile</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Carry out numerical calculation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.excute">
+<code class="descname">excute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.excute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.get_results_from_matfile">
+<code class="descname">get_results_from_matfile</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.get_results_from_matfile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.parametrization">
+<code class="descname">parametrization</code><span class="sig-paren">(</span><em>molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.parametrization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect parameters needed by SCF from MolecularData.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">molecule:</th><td class="field-body">A MolecularData object.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">parameters:</th><td class="field-body">dict. Dict with corresponding keys and values. Basis, spin and charge 
+are necessary parameters and other parameters are also supported</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.gaussian_calculator.GaussianCalculator.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.gaussian_calculator.GaussianCalculator.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.drivers.hamiltonian_simplification">
+<span id="hiqfermion-drivers-hamiltonian-simplification-module"></span><h2>hiqfermion.drivers.hamiltonian_simplification module<a class="headerlink" href="#module-hiqfermion.drivers.hamiltonian_simplification" title="Permalink to this headline">¶</a></h2>
+<p>The module used to simplify the molecular hamiltonian by a list of qubit index
+you want to remove from the vqe calculation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example how to use:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="hiqfermion.drivers.hamiltonian_simplification.hamiltonian_cut">
+<code class="descclassname">hiqfermion.drivers.hamiltonian_simplification.</code><code class="descname">hamiltonian_cut</code><span class="sig-paren">(</span><em>hamiltonian</em>, <em>index_list</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.hamiltonian_simplification.hamiltonian_cut" title="Permalink to this definition">¶</a></dt>
+<dd><p>The function used to cut the hamiltonian by given index_list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">hamiltonian(QubitOperator):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The molecular hamiltonian.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">index_list:</th><td class="field-body">The list of qubit index you want to remove from the qubit
+hamiltonian.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">new_hamiltonian(QubitOperator):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The new molecular hamiltonian after simplification</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.drivers.nwchem_calculator">
+<span id="hiqfermion-drivers-nwchem-calculator-module"></span><h2>hiqfermion.drivers.nwchem_calculator module<a class="headerlink" href="#module-hiqfermion.drivers.nwchem_calculator" title="Permalink to this headline">¶</a></h2>
+<p>The module of using NWChem to do quantum chemistry calculations. In this module
+your hiqfermion input object will be translated into a NWChem style input file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example hiqfermion style object:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.834</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">geometry</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">example nwchem style input file <cite>h2.nw</cite>:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><div class="first highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="s2">&quot;H2_sto-3g_singlet ccsd Energy&quot;</span>
+<span class="n">geometry</span>
+  <span class="n">H</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+  <span class="n">H</span> <span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.74</span>
+<span class="k">end</span>
+<span class="n">basis</span>
+  <span class="o">*</span> <span class="n">library</span> <span class="n">sto</span><span class="o">-</span><span class="mi">3</span><span class="n">g</span>
+<span class="k">end</span>
+<span class="n">task</span> <span class="n">ccsd</span> <span class="n">energy</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">example how to use <cite>nwchem_calculator</cite>:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">nwchem_calculator</span>
+<span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;Li&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.834</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">geometry</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">nw_h2</span> <span class="o">=</span> <span class="n">nwchem_calculator</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
+<span class="n">nw_h2</span><span class="o">.</span><span class="n">excute</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-hiqfermion.drivers.nwchem_inputfile_generator">
+<span id="hiqfermion-drivers-nwchem-inputfile-generator-module"></span><h2>hiqfermion.drivers.nwchem_inputfile_generator module<a class="headerlink" href="#module-hiqfermion.drivers.nwchem_inputfile_generator" title="Permalink to this headline">¶</a></h2>
+<p>Generate a nwchem input file from molecular data. The input molecule data
+structure must be a <cite>hiqfermion_molecular_data</cite> type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example hiqfermion input molecular data:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">))]</span> 
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">)</span>
+<span class="n">molecule</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">example nwchem input file <cite>h2.nw</cite>:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><div class="first last highlight-fortran notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="s2">&quot;H2 sto-3g CCSD Energy&quot;</span>
+<span class="n">geometry</span>
+  <span class="n">h</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+  <span class="n">h</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mf">0.5</span>
+<span class="k">end</span>
+<span class="n">basis</span>
+  <span class="o">*</span> <span class="n">library</span> <span class="n">sto</span><span class="o">-</span><span class="mi">3</span><span class="n">g</span>
+<span class="k">end</span>
+<span class="n">task</span> <span class="n">ccsd</span> <span class="n">energy</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="hiqfermion.drivers.nwchem_inputfile_generator.geometry_transform">
+<code class="descclassname">hiqfermion.drivers.nwchem_inputfile_generator.</code><code class="descname">geometry_transform</code><span class="sig-paren">(</span><em>molecular_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.nwchem_inputfile_generator.geometry_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the geometry into nwchem input file format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">molecular_geometry:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The hiqfermion molecular data geometry format.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">nwchem_geometry(str):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The nwchem format geometry</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="hiqfermion.drivers.nwchem_inputfile_generator.save_nw_in">
+<code class="descclassname">hiqfermion.drivers.nwchem_inputfile_generator.</code><code class="descname">save_nw_in</code><span class="sig-paren">(</span><em>molecular_data</em>, <em>energy_type='ccsd'</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.nwchem_inputfile_generator.save_nw_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the hiqfermion molecular data into a nwchem input file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">molecular_data:</th><td class="field-body">The hiqfermion molecular data type which includes geometry, 
+basis, multiplicity, charge and so on.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Return <cite>None</cite> but save the molecular informations.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.drivers.psi4_calculator">
+<span id="hiqfermion-drivers-psi4-calculator-module"></span><h2>hiqfermion.drivers.psi4_calculator module<a class="headerlink" href="#module-hiqfermion.drivers.psi4_calculator" title="Permalink to this headline">¶</a></h2>
+<p>The main module of using psi4 to do calculations on input file <cite>molecule.in</cite>
+which generated from <cite>psi4_inputfile_generator</cite> and output a <cite>molecule.out</cite>
+file which contains all output informations about your input molecule.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example import modules:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">Psi4Calculator</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">example single molecule:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.834</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">geometry</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">psi4_h2</span> <span class="o">=</span> <span class="n">Psi4Calculator</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
+<span class="n">psi4_h2</span><span class="o">.</span><span class="n">excute</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">example multi molecule:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.844</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">geometry</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule1</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule1</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.854</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">geometry</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">geometry</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule2</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule2</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule2</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">psi4_h2</span> <span class="o">=</span> <span class="n">Psi4Calculator</span><span class="p">([</span><span class="n">molecule1</span><span class="p">,</span> <span class="n">molecule2</span><span class="p">],</span> <span class="n">multimolecule</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">psi4_h2</span><span class="o">.</span><span class="n">excute</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="module-hiqfermion.drivers.psi4_inputfile_generator">
+<span id="hiqfermion-drivers-psi4-inputfile-generator-module"></span><h2>hiqfermion.drivers.psi4_inputfile_generator module<a class="headerlink" href="#module-hiqfermion.drivers.psi4_inputfile_generator" title="Permalink to this headline">¶</a></h2>
+<p>Generate a psi4 input file from molecular data. The input molecule data
+structure must be a <cite>hiqfermion_molecular_data</cite> type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example hiqfermion input molecular data:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">))]</span> 
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">)</span>
+<span class="n">molecule</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">example psi4 input file <cite>h2.in</cite>:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">molecule</span> <span class="n">h2</span><span class="p">{</span>
+    <span class="n">H</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span>
+    <span class="n">H</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mf">0.4</span>
+<span class="p">}</span>
+<span class="nb">set</span> <span class="n">basis</span> <span class="n">cc</span><span class="o">-</span><span class="n">pVDZ</span>
+<span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="hiqfermion.drivers.psi4_inputfile_generator.geometry_transform">
+<code class="descclassname">hiqfermion.drivers.psi4_inputfile_generator.</code><code class="descname">geometry_transform</code><span class="sig-paren">(</span><em>molecular_geometry</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.psi4_inputfile_generator.geometry_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the geometry into psi4 input file format.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">molecular_geometry:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The hiqfermion molecular data geometry format.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">psi4_geometry(str):</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body">The psi4 format geometry</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="hiqfermion.drivers.psi4_inputfile_generator.save_psi4_in">
+<code class="descclassname">hiqfermion.drivers.psi4_inputfile_generator.</code><code class="descname">save_psi4_in</code><span class="sig-paren">(</span><em>molecular_data</em>, <em>energy_type='ccsd'</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.psi4_inputfile_generator.save_psi4_in" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the hiqfermion molecular data into a psi4 input file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">molecular_data:</th><td class="field-body">The hiqfermion molecular data type which includes geometry, 
+basis, multiplicity, charge and so on.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Return <cite>None</cite> but save the molecular informations.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.drivers.pyscf_calculator">
+<span id="hiqfermion-drivers-pyscf-calculator-module"></span><h2>hiqfermion.drivers.pyscf_calculator module<a class="headerlink" href="#module-hiqfermion.drivers.pyscf_calculator" title="Permalink to this headline">¶</a></h2>
+<p>The module of calling Gaussian16 to do calculations based on the input MolecularData
+and update the MolecularData inplace.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">example import modules:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">MolecularData</span>
+<span class="kn">from</span> <span class="nn">hiqfermion.drivers</span> <span class="kn">import</span> <span class="n">PyscfCalculator</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">example single molecule:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><div class="first highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span><span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;pyscf_sto-3g_1_0_h2&#39;</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">ps_h2</span> <span class="o">=</span> <span class="n">PyscfCalculator</span><span class="p">(</span><span class="n">molecule</span><span class="p">)</span>
+<span class="n">ps_h2</span><span class="o">.</span><span class="n">excute</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">example post-HF:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><div class="first last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometry</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)),</span> <span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.74</span><span class="p">))]</span> 
+<span class="n">description</span> <span class="o">=</span> <span class="s1">&#39;g16_sto-3g_1_0_h2&#39;</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
+<span class="n">multiplicity</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">charge</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">molecule</span> <span class="o">=</span> <span class="n">MolecularData</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span>
+                         <span class="n">basis</span><span class="p">,</span>
+                         <span class="n">multiplicity</span><span class="p">,</span>
+                         <span class="n">charge</span><span class="p">,</span>
+                         <span class="n">description</span> <span class="o">=</span> <span class="n">description</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;geometry:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">geometry</span><span class="p">)</span>
+<span class="n">ps_h2</span> <span class="o">=</span> <span class="n">PyscfCalculator</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="n">posthf</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CCSD&#39;</span><span class="p">,</span> <span class="s1">&#39;Fci&#39;</span><span class="p">])</span> <span class="c1">#case insensitive keys for the post-hf jobs </span>
+<span class="n">ps_h2</span><span class="o">.</span><span class="n">excute</span><span class="p">()</span>
+<span class="k">print</span> <span class="p">(</span><span class="s1">&#39;FCI-CCSD:&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">.</span><span class="n">fci_energy</span> <span class="o">-</span> <span class="n">molecule</span><span class="o">.</span><span class="n">ccsd_energy</span><span class="p">)</span>        
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator">
+<em class="property">class </em><code class="descclassname">hiqfermion.drivers.pyscf_calculator.</code><code class="descname">Calculator</code><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator.build">
+<code class="descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator.get_one_ele_integrals">
+<code class="descname">get_one_ele_integrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator.get_one_ele_integrals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator.get_property">
+<code class="descname">get_property</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator.get_two_ele_integrals">
+<code class="descname">get_two_ele_integrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator.get_two_ele_integrals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.Calculator.warning_raise">
+<code class="descname">warning_raise</code><span class="sig-paren">(</span><em>txt</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.Calculator.warning_raise" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator">
+<em class="property">class </em><code class="descclassname">hiqfermion.drivers.pyscf_calculator.</code><code class="descname">PyscfCalculator</code><span class="sig-paren">(</span><em>molecule</em>, <em>posthf=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#hiqfermion.drivers.pyscf_calculator.Calculator" title="hiqfermion.drivers.pyscf_calculator.Calculator"><code class="xref py py-class docutils literal notranslate"><span class="pre">hiqfermion.drivers.pyscf_calculator.Calculator</span></code></a></p>
+<p>A driver to PyScf.
+PyscfCalculator.excute() to run the job.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">molecule:</th><td class="field-body">A ‘MolecularData’ object with the geometry, basis, spin and charge infomation.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">posthf:</th><td class="field-body">List of string to indicate what kind of posthf jobs should run.
+The key should be one (or more) of the following words [‘ccsd’,’ccsd(t)’,’fci’,’cisd’]
+The keywords are case insensitive.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">By using <cite>PyscfCalculator.excute()</cite> the calculator will call Pyscf to do quantum chemistry calculation
+and update the corresponding input MolecularData object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.build">
+<code class="descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate gto class for the following quantum chemistry calculation</p>
+<p>the gto.Mole() class will be builded.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.calculate">
+<code class="descname">calculate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.calculate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Carry out numerical calculation</p>
+<p>RHF/ROHF calculation will be carried out.
+FCI/CCSD/CCSD(T)/CISD jobs will be run if the corresponding keyword in posthf is provided.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.excute">
+<code class="descname">excute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.excute" title="Permalink to this definition">¶</a></dt>
+<dd><p>excute the calculation and update the moleucle class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_ccsd_double_amps">
+<code class="descname">get_ccsd_double_amps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_ccsd_double_amps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ccsd double amps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">np.array contain ccsd double amps.
+The shape is (no+nv, no+nv, no+nv, no+nv) in which no is the number of occupied orbitals and nv virtual orbitals.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_ccsd_single_amps">
+<code class="descname">get_ccsd_single_amps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_ccsd_single_amps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the ccsd single amps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">np.array contain ccsd single amps.
+The shape is (no+nv, no+nv) in which no is the number of occupied orbitals and nv virtual orbitals.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_one_ele_integrals">
+<code class="descname">get_one_ele_integrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_one_ele_integrals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate one electron integrals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">np.array contain one ele integrals.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_property">
+<code class="descname">get_property</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_property" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_two_ele_integrals">
+<code class="descname">get_two_ele_integrals</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.get_two_ele_integrals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate two electron integrals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">np.array contain two ele integrals.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.make_new_moleculedata">
+<code class="descname">make_new_moleculedata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.make_new_moleculedata" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.parametrization">
+<code class="descname">parametrization</code><span class="sig-paren">(</span><em>molecule</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.parametrization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect parameters needed by SCF from MolecularData and convert them to dictionary</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Args:</th><td class="field-body"><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">molecule:</th><td class="field-body">A ‘MolecularData’ object with the geometry, basis, spin and charge infomation.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Dict with corresponding keys and values. Basis, spin and charge 
+are necessary parameters and other arbitrary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.posthf_build">
+<code class="descname">posthf_build</code><span class="sig-paren">(</span><em>posthf</em><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.posthf_build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="hiqfermion.drivers.pyscf_calculator.PyscfCalculator.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#hiqfermion.drivers.pyscf_calculator.PyscfCalculator.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the MolecularData with calculated properties.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-hiqfermion.drivers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-hiqfermion.drivers" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, DCT-Quantum
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

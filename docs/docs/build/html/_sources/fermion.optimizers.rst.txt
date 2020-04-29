@@ -1,0 +1,46 @@
+fermion.optimizers package
+==========================
+
+Submodules
+----------
+
+fermion.optimizers.minimize module
+----------------------------------
+
+.. automodule:: fermion.optimizers.minimize
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+fermion.optimizers.minimize\_optimization module
+------------------------------------------------
+
+.. automodule:: fermion.optimizers.minimize_optimization
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+fermion.optimizers.nakanizhi\_optimizer\_test module
+----------------------------------------------------
+
+.. automodule:: fermion.optimizers.nakanizhi_optimizer_test
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+fermion.optimizers.optimize module
+----------------------------------
+
+.. automodule:: fermion.optimizers.optimize
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: fermion.optimizers
+    :members:
+    :undoc-members:
+    :show-inheritance:
